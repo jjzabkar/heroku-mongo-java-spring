@@ -4,9 +4,9 @@
 
     mvn package
     
-## Run Via Shell Script
+## Run Via Jetty
 
-    ./target/bin/embedded-tomcat
+    java $JAVA_OPTS -jar ./target/dependency/jetty-runner.jar --port $PORT ./target/*.war
 
 ## Run Via Eclipse WTP
 
@@ -20,6 +20,11 @@ Use a browser to access:
 
 * http://localhost:8080/index.jsp
 * http://localhost:8080/hello
+* http://localhost:8080/foo
+
+## Deploy to Heroku
+
+See below.
 
 
 <br/>

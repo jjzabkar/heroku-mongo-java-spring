@@ -5,8 +5,6 @@
 	<version>1.0-SNAPSHOT</version>
 	<packaging>war</packaging>
 
-	<!-- <parent> <groupId>com.jjz</groupId> <artifactId>jjz-base-pom</artifactId> <version>1.0-SNAPSHOT</version> </parent> -->
-
 	<dependencies>
 		<!-- begin dependencies with ordering importance -->
 		<dependency>
@@ -34,6 +32,18 @@
 			<artifactId>cglib</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-annotations</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>javax.inject</groupId>
 			<artifactId>javax.inject</artifactId>
 		</dependency>
@@ -41,22 +51,6 @@
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.tomcat.embed</groupId>
-			<artifactId>tomcat-embed-core</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.tomcat.embed</groupId>
-			<artifactId>tomcat-embed-logging-juli</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.tomcat.embed</groupId>
-			<artifactId>tomcat-embed-jasper</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.tomcat</groupId>
-			<artifactId>tomcat-jsp-api</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.mongodb</groupId>
@@ -70,6 +64,7 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
 		</dependency>
+		<!-- <dependency> <groupId>org.springframework</groupId> <artifactId>spring-orm</artifactId> </dependency> -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-web</artifactId>
@@ -77,6 +72,10 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-mongodb</artifactId>
 		</dependency>
 		<!-- end lexicographically ordered dependencies -->
 
@@ -128,6 +127,8 @@
 			</plugin>
 
 			<!-- The maven app assembler plugin will generate a script that sets up the classpath and runs your project -->
+			<!--  for creating embedded tomcat script -->
+			<!-- 
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>appassembler-maven-plugin</artifactId>
@@ -150,6 +151,7 @@
 					</execution>
 				</executions>
 			</plugin>
+			-->
 
 			<plugin>
 				<groupId>org.apache.tomcat.maven</groupId>
@@ -694,6 +696,11 @@
 				</exclusions>
 			</dependency>
 			<dependency>
+				<groupId>org.springframework.data</groupId>
+				<artifactId>spring-data-mongodb</artifactId>
+				<version>${spring-data-mongodb.version}</version>
+			</dependency>
+			<dependency>
 				<groupId>org.springframework.ws</groupId>
 				<artifactId>spring-xml</artifactId>
 				<version>${springframework-ws.version}</version>
@@ -760,6 +767,7 @@
 		<rest-assured.version>1.8.1</rest-assured.version>
 		<servlet-api.version>2.5</servlet-api.version>
 		<slf4j.version>1.7.5</slf4j.version>
+		<spring-data-mongodb.version>1.3.0.RELEASE</spring-data-mongodb.version>
 		<springframework.version>3.2.4.RELEASE</springframework.version>
 		<springframework-android.version>1.0.1.RELEASE</springframework-android.version>
 		<springframework-ws.version>2.1.3.RELEASE</springframework-ws.version>
