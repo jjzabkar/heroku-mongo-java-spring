@@ -4,9 +4,21 @@
 
     mvn package
     
+    
 ## Run Via Jetty
 
+    mvn clean jetty:run
+    
+
+## Run Via Tomcat
+
+    mvn clean tomcat7:run
+    
+
+## Run Via Command Line (Java+Jetty)
+
     java $JAVA_OPTS -jar ./target/dependency/jetty-runner.jar --port $PORT ./target/*.war
+
 
 ## Run Via Eclipse WTP
 
