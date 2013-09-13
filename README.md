@@ -4,23 +4,28 @@
 
     mvn package
     
+
+## Run
+
+Note: Running requires the `MONGOHQ_URL` environment variable to be set.
+
     
-## Run Via Jetty
+### Run Via Jetty
 
     mvn clean jetty:run
     
 
-## Run Via Tomcat
+### Run Via Tomcat
 
     mvn clean tomcat7:run
     
 
-## Run Via Command Line (Java+Jetty)
+### Run Via Command Line (Java+Jetty)
 
     java $JAVA_OPTS -jar ./target/dependency/jetty-runner.jar --port $PORT ./target/*.war
 
 
-## Run Via Eclipse WTP
+### Run Via Eclipse WTP
 
 1. Project::Right-Click::Properties::Project Facts tab
 2. Check: Dynamic Web Module (3.0+), Java  (1.6+), JavaScript 

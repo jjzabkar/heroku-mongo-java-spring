@@ -13,7 +13,8 @@ import com.mongodb.Mongo;
 import com.mongodb.MongoURI;
 
 /**
- * Extention of {@link AbstractMongoConfiguration} that configures stuff like {@link MongoTemplate}.
+ * Extension of {@link AbstractMongoConfiguration} that configures stuff like {@link MongoTemplate} and classpath scans for
+ * {@code MongoRepository}s.
  * 
  * @author JJ Zabkar
  */
@@ -45,6 +46,7 @@ public class MongoDbConfiguration extends AbstractMongoConfiguration {
 		return mongoURI().getDatabase();
 	}
 
+	@SuppressWarnings("deprecation")
 	@Override
 	@DependsOn(MONGO_URI_BEAN_NAME)
 	@Bean
