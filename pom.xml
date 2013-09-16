@@ -161,12 +161,6 @@
 					<addContextWarDependencies>true</addContextWarDependencies>
 					<addWarDependenciesInClassloader>true</addWarDependenciesInClassloader>
 					<contextFile>./src/main/webapp/META-INF/context.xml</contextFile>
-					<!-- <path>/${project.name}</path> -->
-					<!-- <server>lo</server> -->
-					<systemProperties>
-						<!-- <logback.configurationFile>${logback.debug.configuration.file}</logback.configurationFile> -->
-						<MONGOHQ_URL>mongodb://jjzabkar:44Zabman@paulo.mongohq.com:10003/app18049044</MONGOHQ_URL>
-					</systemProperties>
 					<url>http://localhost:8080/manager/text</url>
 					<!-- <update>true</update> -->
 				</configuration>

@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 
 import java.util.List;
@@ -31,6 +32,16 @@ public class WebMvcConfiguration extends WebMvcConfigurationSupport {
 
 	public WebMvcConfiguration() {
 		LOGGER.info("init");
+	}
+
+	@Override
+	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+		String[] staticResourcesLocations = { "/resources/", "classpath:/META-INF/web-resources/" };
+
+		registry.addResourceHandler("/resources/**").addResourceLocations(staticResourcesLocations);
+		// .setCachePeriod(0); // disable caching
+
+		registry.addResourceHandler("/docs/**").addResourceLocations("/docs/", "classpath:/META-INF/docs/");
 	}
 
 	@Bean
